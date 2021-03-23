@@ -34,3 +34,22 @@ const selection_sort = (arr) => {
 
 console.log(selection_sort([6, 2, 5, 1, 3, 7, 4]));
 ```
+
+<br>
+
+## **Big O**
+
+- **Worst Case: O(n^2)**: 정렬이 하나도 안되어있는 경우
+- **Best Case: O(n^2)**: 이미 정렬이 되어있는 경우
+
+<br>
+
+선택 정렬은 위의 두 정렬과는 다르게 정렬이 이미 되어있는 경우에도 O(n^2)의 시간 복잡도를 가진다.
+
+그 이유는 매번 정해진 자리에 올 수 있는 최소값을 찾아야하기 때문이다. 그렇기 때문에 성능이 매우 떨어진다.
+
+<br>
+
+참고
+
+- [[Code Playground]](https://im-developer.tistory.com/133)
