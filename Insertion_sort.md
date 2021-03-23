@@ -36,3 +36,18 @@ const insertionSort = (arr) => {
 
 console.log(insertionSort([3, 5, 1, 4, 7, 6, 2]));
 ```
+
+<br>
+
+## **Big O**
+
+- **Worst Case: O(n^2)**: 정렬이 하나도 안되어있는 경우
+- **Best Case: O(n)**: 이미 정렬이 되어있는 경우
+
+삽입 정렬 역시 버블 정렬과 똑같은 시간 복잡도를 가진다.
+
+<br>
+
+참고
+
+- [[Code Playground]](https://im-developer.tistory.com/133)
