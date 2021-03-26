@@ -6,7 +6,16 @@
 
 const min_fee = (arr) => {
   arr.sort((a, b) => a - b);
-  let time = 0;
+  let totalWaittingTime = 0;
+  let timeArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    totalWaittingTime += arr[i];
+    timeArr = [...timeArr, totalWaittingTime];
+  }
+
+  let answer = timeArr.reduce((acc, cur) => acc + cur, 0);
+  console.log(answer);
 };
 
 min_fee([6, 11, 4, 1]);
