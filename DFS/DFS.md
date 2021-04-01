@@ -126,6 +126,43 @@ const dfs = (graph, v, visited) => {
 dfs(graph, 1, visited);
 ```
 
+```jsx
+const graph = [
+  [],
+  [2, 3, 8],
+  [1, 7],
+  [1, 4, 5],
+  [3, 5],
+  [3, 4],
+  [7],
+  [2, 6, 8],
+  [1, 7],
+];
+
+let visited = Array.from({ length: graph.length }, () => false);
+
+const dfs = (graph, startNode, visited) => {
+  let needVisitedStack = [...graph[startNode]];
+
+  visited[startNode] = true;
+  console.log(`${startNode} `);
+
+  // 방문해야할 노드가 있으면
+  while (needVisitedStack.length !== 0) {
+    const node = needVisitedStack.shift();
+
+    // 만약 방문하지 않은 노드라면
+    if (visited[node] === false) {
+      needVisitedStack = [...graph[node], ...needVisitedStack];
+      visited[node] = true;
+      console.log(`${node} `);
+    }
+  }
+};
+
+dfs(graph, 1, visited);
+```
+
 <br>
 
 참고
