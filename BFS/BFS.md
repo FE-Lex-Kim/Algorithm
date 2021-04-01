@@ -76,6 +76,42 @@ bfs(graph, "A");
 console.log('bfs(graph, "A");: ', bfs(graph, "A"));
 ```
 
+```jsx
+// bfs
+const graph = [
+  [],
+  [2, 3, 8],
+  [1, 7],
+  [1, 4, 5],
+  [3, 5],
+  [3, 4],
+  [7],
+  [2, 6, 8],
+  [1, 7],
+];
+
+let visited = Array.from({ length: graph.length }, () => false);
+
+const bfs = (graph, startNode, visited) => {
+  let needVisitQueue = [...graph[startNode]];
+
+  visited[startNode] = true;
+  console.log(`${startNode} `);
+  // 방문이 필요한 노드들이 있으면
+  while (needVisitQueue.length !== 0) {
+    let node = needVisitQueue.shift();
+    // 만약 방문하지않은 노드라면 큐에 넣어준다.
+    if (visited[node] === false) {
+      needVisitQueue = [...needVisitQueue, ...graph[node]];
+      visited[node] = true;
+      console.log(`${node} `);
+    }
+  }
+};
+
+bfs(graph, 1, visited);
+```
+
 <br>
 
 ## 시간복잡도
