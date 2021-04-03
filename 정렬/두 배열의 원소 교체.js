@@ -22,11 +22,18 @@ const test = (str) => {
   arr1 = splitArr[0];
   arr2 = splitArr[1];
 
+  // N의 개수가 100000(10만) 이므로 만약 정렬할때 N의 제곱 만큼 사용하는 정렬 알고리즘(선택정렬)
+  // 시간복잡도를 사용한다면 시간이 오버 될 수 있다.
+  // 정렬 문제는 항상 시간을 마음에 두고 풀기.
   arr1.sort((a, b) => +a - +b);
   arr2.sort((a, b) => +b - +a);
 
   for (let i = 0; i < K; i++) {
-    arr1.splice(i, 1, arr2[i]);
+    if (arr1[i] < arr2[i]) {
+      arr1.splice(i, 1, arr2[i]);
+    } else {
+      break;
+    }
   }
 
   console.log(arr1.reduce((acc, cur) => acc + +cur, 0));
