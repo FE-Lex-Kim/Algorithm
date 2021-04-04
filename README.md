@@ -45,6 +45,7 @@
 
 - [선형 탐색](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%ED%83%90%EC%83%89/linear%20search.md)
 - [이진 탐색](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%ED%83%90%EC%83%89/Binary%20Search.md)
+- [파라메트릭 탐색](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%ED%83%90%EC%83%89/%ED%8C%8C%EB%9D%BC%EB%A9%94%ED%8A%B8%EB%A6%AD%20%EC%84%9C%EC%B9%98.md)
 
 <br>
 
