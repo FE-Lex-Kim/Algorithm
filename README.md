@@ -56,3 +56,4 @@
 - [구름 코딩테스트 템플릿](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%EA%B5%AC%EB%A6%84%20%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%20%ED%85%9C%ED%94%8C%EB%A6%BF.js)
 - [최대공약수](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98.js)
 - [팩토리얼](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%ED%8C%A9%ED%86%A0%EB%A6%AC%EC%96%BC.js)
+- [파라메트릭 서치 최솟값, 최댓값 구하기](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%ED%8C%8C%EB%9D%BC%EB%A9%94%ED%8A%B8%EB%A6%AD%20%EC%84%9C%EC%B9%98%20%EC%B5%9C%EC%86%9F%EA%B0%92%2C%20%EC%B5%9C%EB%8C%93%EA%B0%92%20%EA%B5%AC%ED%95%98%EA%B8%B0.js)
