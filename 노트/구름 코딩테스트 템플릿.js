@@ -17,7 +17,9 @@ test1(`1
 const test2 = (str) => {
   let testArr = [];
   for (let line of str.split("\n")) {
-    testArr = [...testArr, line.split(" ")];
+    // 문자열로 바뀌어있는 배열의 요소들을 숫자요소로 바꾸어준다
+    let numberLine = line.split(" ").map((v) => +v);
+    testArr = [...testArr, numberLine];
   }
 
   // 첫번째 줄에서 첫번째, 두번째 요소 N, M에 할당
@@ -27,8 +29,11 @@ const test2 = (str) => {
   // 첫번째줄 배열에서 삭제
   testArr.splice(0, 1);
 
-  // 문자열을 숫자로 바꾼다.
-  let arr = testArr[0].map((todo) => +todo);
+  // 두 번째줄 하나만 있는경우 사용
+  let arr = testArr[0];
+
+  // 만약 두 번째줄 이상 줄이 존재하면 사용
+  // let arr = testArr;
 
   console.log(arr);
 };
