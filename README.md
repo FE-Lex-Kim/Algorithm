@@ -5,12 +5,14 @@
 ## 1. BFS
 
 - [BFS란?](https://github.com/FE-Lex-Kim/Algorithm/blob/main/BFS/BFS.md)
+- [BFS 알고리즘 문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/BFS)
 
 <br>
 
 ## 2. DFS
 
 - [DFS란?](https://github.com/FE-Lex-Kim/Algorithm/blob/main/DFS/DFS.md)
+- [DFS 알고리즘 문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/DFS)
 
 <br>
 
