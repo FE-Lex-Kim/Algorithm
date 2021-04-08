@@ -39,24 +39,23 @@ rl.on("line", function (line) {
   let numberLine = line.split(" ").map((v) => +v);
   testArr = [...testArr, numberLine];
 }).on("close", function () {
+  // 첫번째 줄에서 첫번째, 두번째 요소 N, M에 할당
+  let N = +testArr[0][0];
+  let M = +testArr[0][1];
+
+  // 첫번째줄 배열에서 삭제
+  testArr.splice(0, 1);
+
+  // 두 번째줄 하나만 있는경우 사용
+  let arr = testArr[0];
+
+  // 만약 두 번째줄 이상 줄이 존재하면 사용
+  // let arr = testArr;
+
+  console.log(arr);
+
+  // 입력값
+  // 4 6
+  // 19 15 10 17
   process.exit();
 });
-
-// 첫번째 줄에서 첫번째, 두번째 요소 N, M에 할당
-let N = +testArr[0][0];
-let M = +testArr[0][1];
-
-// 첫번째줄 배열에서 삭제
-testArr.splice(0, 1);
-
-// 두 번째줄 하나만 있는경우 사용
-let arr = testArr[0];
-
-// 만약 두 번째줄 이상 줄이 존재하면 사용
-// let arr = testArr;
-
-console.log(arr);
-
-// 입력값
-// 4 6
-// 19 15 10 17
