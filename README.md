@@ -57,6 +57,10 @@
 - [다이나믹 프로그래밍](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md)
 - [다이나믹 프로그래밍 문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 
+## 9. 프로그래머스 연습문제
+
+-[프로그래머스 연습문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C)
+
 <br>
 
 ## 노트
