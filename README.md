@@ -61,9 +61,9 @@
 
 ## 9. 자료구조
 
-<br>
-
 - [자료구조 문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
+
+<br>
 
 ## 10. 프로그래머스 연습문제
 
