@@ -6,7 +6,10 @@ var countGoodRectangles = function (rectangles) {
     4. arr에서 가장큰 값을 찾는다.
     5. 가장큰 값과 같은 값이 여러개인지 찾는다. arr.filter( 가장큰값만 남김)
     6. length가 정답~
+
+    * width : 가로, length: 세로, height: 높이(3차원), side length: 한쪽 면
      */
+
   let arr = [];
   for (let i = 0; i < rectangles.length; i++) {
     arr.push(Math.min(...rectangles[i]));
