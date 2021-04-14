@@ -1,3 +1,4 @@
+// 문제유형: 큐, 스택
 function solution(bridge_length, weight, truck_weights) {
   // 첫번째 트럭이 자난 시점이 1초이고 그이후 상황이기때문에 2초로 초기화
   let time = 2;
