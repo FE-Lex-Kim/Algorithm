@@ -35,4 +35,14 @@ var minAddToMakeValid = function (str) {
   return right + left;
 };
 
-console.log(minAddToMakeValid("())("));
+// nice soluton too by using a stack
+var minAddToMakeValid = function (S) {
+  const stack = [];
+  for (let s of S) {
+    if (s === ")" && stack[stack.length - 1] === "(") stack.pop();
+    else stack.push(s);
+  }
+  return stack.length;
+};
+
+console.log(minAddToMakeValid("()))()))((())"));
