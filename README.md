@@ -44,6 +44,7 @@
 
 - [삽입 정렬](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EC%A0%95%EB%A0%AC/Insertion_sort.md)
 - [선택 정렬](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EC%A0%95%EB%A0%AC/Selection_Sort.md)
+- [정렬 알고리즘 문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%EC%A0%95%EB%A0%AC)
 
 <br>
 
