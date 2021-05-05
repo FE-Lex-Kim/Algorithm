@@ -47,3 +47,49 @@ tastyIcecream(`4 5
 00011
 11111
 01000`);
+
+const test2 = (str) => {
+  let testArr = [];
+  for (let line of str.split("\n")) {
+    // 문자열로 바뀌어있는 배열의 요소들을 숫자요소로 바꾸어준다
+    let numberLine = line.split(" ").map((v) => v);
+    testArr = [...testArr, numberLine];
+  }
+
+  // 첫번째 줄에서 첫번째, 두번째 요소 N, M에 할당
+  let N = +testArr[0][0];
+  let M = +testArr[0][1];
+
+  // 첫번째줄 배열에서 삭제
+  testArr.splice(0, 1);
+  const dfs = (i, j) => {
+    if (i < 0 || j < 0 || N <= i || M <= j) {
+      return 0;
+    }
+    let cur = arr[i][j];
+    if (cur === "0") {
+      arr[i][j] = "1";
+
+      // 상하좌우
+      dfs(i - 1, j); // 상
+      dfs(i + 1, j); // 하
+      dfs(i, j - 1); // 좌
+      dfs(i, j + 1); // 우
+
+      return 1;
+    }
+
+    return 0;
+  };
+
+  // 만약 두 번째줄 이상 줄이 존재하면 사용
+  let arr = testArr.map((v) => v[0].split(""));
+  let sum = 0;
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      sum += dfs(i, j);
+    }
+  }
+
+  console.log(sum);
+};
