@@ -34,4 +34,19 @@ function solution(n, arr1, arr2) {
   return answer;
 }
 
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]);
+function solution(n, arr1, arr2) {
+  const fc = (v, n) => {
+    let binary = v.toString(2);
+    binary = "0".repeat(n - binary.length) + binary;
+
+    return binary;
+  };
+
+  arr1 = arr1.map((v, i) =>
+    fc(v | arr2[i], n).replace(/[01]/g, (v) => (+v ? "#" : " "))
+  );
+
+  return arr1;
+}
+
+console.log(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]));
