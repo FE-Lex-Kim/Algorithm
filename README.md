@@ -74,7 +74,8 @@
 
 ## 10. 프로그래머스 연습문제
 
-- [프로그래머스 연습문제들](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C)
+- [1단계 연습문제](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/1%EB%8B%A8%EA%B3%84)
+- [2단계 연습문제](https://github.com/FE-Lex-Kim/Algorithm/tree/main/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/2%EB%8B%A8%EA%B3%84)
 
 <br>
 
