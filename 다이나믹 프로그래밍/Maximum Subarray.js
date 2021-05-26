@@ -17,14 +17,14 @@ var maxSubArray = function (nums) {
 
 var maxSubArray = function (nums) {
   let dp = [nums[0]];
-  let answer = Number.MIN_SAFE_INTEGER;
+  let answer = nums[0];
   for (let i = 1; i < nums.length; i++) {
     const cur = nums[i];
     dp[i] = Math.max(cur, dp[i - 1] + cur);
     answer = Math.max(answer, dp[i]);
   }
 
-  console.log(answer);
+  return answer;
 };
 
-maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
+maxSubArray([1]);
