@@ -95,3 +95,4 @@
 - [백준 알고리즘 JS 템플릿](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%EB%B0%B1%EC%A4%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20JS%20%ED%85%9C%ED%94%8C%EB%A6%BF.js)
 - [가중치 최단거리(다익스트라 최단거리 알고리즘)](<https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%EA%B0%80%EC%A4%91%EC%B9%98%20%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC(%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC%20%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98).js>)
 - [비가중치 최단거리 알고리즘](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%EB%B9%84%EA%B0%80%EC%A4%91%EC%B9%98%20%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC.js)
+- [플로이드 워셜 알고리즘](https://github.com/FE-Lex-Kim/Algorithm/blob/main/%EB%85%B8%ED%8A%B8/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%9B%8C%EC%85%9C%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.js)
