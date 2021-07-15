@@ -60,3 +60,11 @@ function solution(skill, skill_trees) {
     .filter((v) => skill.indexOf(v) === 0).length;
 }
 solution("CBD", ["BACDE", "CBADF", "AECB", "BDA"]);
+
+/* 
+총평:
+1. 정규표현식에 변수를 넣는방법을 몰랐다는점
+2. 정규표현식을 match로 변경된 값을 넣는것보다 replace라는 깔끔한 문법이 있다는것을 잊은점
+3. 시간복잡도가 늘어났으면 어느지점에서 늘어났는지 정확히 파악하지 못한점
+4. 문제자체는 로직을 떠올리는데 그리 문제는 없었지만, 해당문제에 시간복잡도를 고려해서 풀어야하는 문제
+ */
