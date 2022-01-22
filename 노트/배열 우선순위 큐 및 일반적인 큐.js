@@ -5,6 +5,7 @@
     3. 만약 0번째 인덱스를 기준으로 오름차순이 아니라 다른 인덱스를 기준으로 변경하고 싶으면,
         newItem[0] < element[0] 이 부분에서 0에서 원하는 인덱스로 수정하면된다.
  */
+
 class PriorityQueue {
   constructor() {
     this.priorityQueue = [];
@@ -62,8 +63,32 @@ class PriorityQueue {
 
 // 예제 코드
 let priorityQueue = new PriorityQueue();
+console.log("priorityQueue: ", priorityQueue);
 priorityQueue.push([13, 1]);
 priorityQueue.push([3, 2]);
 priorityQueue.push([4, 3]);
 
 console.log(priorityQueue.priorityQueue);
+
+// 일반적인 큐 선입 선출
+class Queue {
+  constructor(init = []) {
+    this.queue = init;
+    this.length = this.queue.length;
+  }
+
+  enqueue(newItem) {
+    if (!newItem) return this.queue;
+
+    this.queue.push(newItem);
+    return this.queue;
+  }
+  dequeue() {
+    this.queue.shift();
+    return this.queue;
+  }
+}
+
+const res = new Queue([1, 2, 3]);
+res.enqueue(4); // [1, 2, 3, 4]
+res.dequeue(); // [1, 2, 3]
