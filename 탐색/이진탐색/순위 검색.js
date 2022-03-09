@@ -157,3 +157,117 @@ solution(
     "- and - and - and - 150",
   ]
 );
+
+// 2번 풀이법
+function solution(info, query) {
+  var answer = [];
+  let search = {};
+  info = info.map((v) => v.split(" "));
+  query = query.map((v) => v.split(" ").filter((v) => v !== "and"));
+
+  let langs = ["java", "python", "cpp", "-"];
+  let parts = ["backend", "frontend", "-"];
+  let careers = ["junior", "senior", "-"];
+  let foods = ["chicken", "pizza", "-"];
+
+  for (let i = 0; i < langs.length; i++) {
+    const lang = langs[i];
+    search[lang] = {};
+    for (let j = 0; j < parts.length; j++) {
+      const part = parts[j];
+      search[lang][part] = {};
+      for (let k = 0; k < careers.length; k++) {
+        const career = careers[k];
+        search[lang][part][career] = {};
+        for (let l = 0; l < foods.length; l++) {
+          const food = foods[l];
+          search[lang][part][career][food] = [];
+        }
+      }
+    }
+  }
+
+  for (let i = 0; i < info.length; i++) {
+    const [lang, part, career, food, score] = info[i];
+    search[lang][part][career][food].push(+score);
+
+    search["-"][part][career][food].push(+score);
+    search["-"]["-"][career][food].push(+score);
+    search["-"][part]["-"][food].push(+score);
+    search["-"][part][career]["-"].push(+score);
+    search["-"]["-"]["-"][food].push(+score);
+    search["-"]["-"][career]["-"].push(+score);
+    search["-"][part]["-"]["-"].push(+score);
+    search["-"]["-"]["-"]["-"].push(+score);
+
+    search[lang]["-"][career][food].push(+score);
+    search[lang]["-"]["-"][food].push(+score);
+    search[lang]["-"][career]["-"].push(+score);
+    search[lang]["-"]["-"]["-"].push(+score);
+
+    search[lang][part]["-"][food].push(+score);
+    search[lang][part]["-"]["-"].push(+score);
+
+    search[lang][part][career]["-"].push(+score);
+  }
+
+  for (let i = 0; i < langs.length; i++) {
+    const lang = langs[i];
+    for (let j = 0; j < parts.length; j++) {
+      const part = parts[j];
+      for (let k = 0; k < careers.length; k++) {
+        const career = careers[k];
+        for (let l = 0; l < foods.length; l++) {
+          const food = foods[l];
+          search[lang][part][career][food].sort((a, b) => a - b);
+        }
+      }
+    }
+  }
+
+  for (let i = 0; i < query.length; i++) {
+    const [lang, part, career, food, score] = query[i];
+
+    let res = search[lang][part][career][food];
+    let left = 0;
+    let right = res.length;
+    let mid = Math.floor((left + right) / 2);
+    while (left < right) {
+      mid = Math.floor((left + right) / 2);
+      if (res[mid] < Number(score)) {
+        left = mid + 1;
+      } else if (res[mid] > Number(score)) {
+        right = mid;
+      } else {
+        right = mid;
+      }
+    }
+
+    if (left >= res.length || left <= -1) {
+      answer.push(0);
+    } else {
+      answer.push(res.length - left);
+    }
+  }
+
+  return answer;
+}
+
+solution(
+  [
+    "java backend junior pizza 150",
+    "python frontend senior chicken 210",
+    "python frontend senior chicken 150",
+    "cpp backend senior pizza 260",
+    "java backend junior chicken 80",
+    "python backend senior chicken 50",
+  ],
+  [
+    "java and backend and junior and pizza 100",
+    "python and frontend and senior and chicken 200",
+    "cpp and - and senior and pizza 250",
+    "- and backend and senior and - 150",
+    "- and - and - and chicken 100",
+    "- and - and - and - 150",
+  ]
+);
