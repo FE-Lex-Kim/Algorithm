@@ -1,44 +1,82 @@
 function solution(N, road, K) {
-  let answer = 0;
-  // 변수
-  let queqe = [];
-  let graph = Array.from({ length: N + 1 }, () => []);
-  let distance = Array.from({ length: N + 1 }, () => Number.MAX_SAFE_INTEGER);
+  var answer = 0;
+  let graph = {};
+  let visited = Array.from({ length: N + 1 }, () => false);
+  let distance = Array.from({ length: N + 1 }, (_, i) => Number.MAX_SAFE_INTEGER);
+  visited[0] = true;
+  // 시작 노드의 거리는 0으로 한다. 자기 자신을 방문하는 거리는 0
+  distance[1] = 0;
 
-  // 초기화 작업
-  // 1. 그래프 정보 초기화
-  for (const ele of road) {
-    let a = ele[0];
-    let b = ele[1];
-    let c = ele[2];
-    graph[a].push([b, c]);
-    graph[b].push([a, c]);
+  // 그래프 정보 초기화해준다.
+  for (let i = 0; i < road.length; i++) {
+    let [start, end, time] = road[i];
+    if (!graph[start]) {
+      graph[start] = [[end, time]];
+    } else if (graph[start]) {
+      graph[start] = [...graph[start], [end, time]];
+    }
+
+    if (!graph[end]) {
+      graph[end] = [[start, time]];
+    } else if (graph[end]) {
+      graph[end] = [...graph[end], [start, time]];
+    }
   }
 
-  const dijkstra = (startNode) => {
-    // 2. 시작노드 최단거리 초기화
-    distance[0] = "Never mind";
-    distance[startNode] = 0;
-
-    // 3. 큐 안에 시작노드 초기화
-    queqe.push(startNode);
-
-    while (queqe.length) {
-      let node = queqe.shift();
-
-      for (const [adjNode, adjTime] of graph[node]) {
-        if (distance[node] + adjTime < distance[adjNode]) {
-          distance[adjNode] = distance[node] + adjTime;
-          queqe.push(adjNode);
-        }
+  // visited에서 방문하지 않았던 노드중에서
+  // distance가 가장 짧은 노드를 찾는다.
+  function getSmallestNode(distance, visited) {
+    let smallest = Number.MAX_SAFE_INTEGER;
+    let index = 0;
+    for (let i = 2; i < distance.length; i++) {
+      const dist = distance[i];
+      const isVisit = visited[i];
+      if (dist < smallest && !isVisit) {
+        smallest = dist;
+        index = i;
       }
     }
-  };
 
-  dijkstra(1);
+    return index;
+  }
+  // 시작 노드를 방문 처리헤준다.
+  visited[1] = true;
 
-  for (const time of distance) {
-    if (time <= K) answer++;
+  // 시작노드의 인접 노드들의 거리를 초기화해준다.
+  for (let i = 0; i < graph[1].length; i++) {
+    const [node, time] = graph[1][i];
+    const cost = distance[1] + time;
+    if (cost < distance[node]) {
+      distance[node] = cost;
+    }
+  }
+
+  // startNode는 이미 방문했으니 N-1만큼 반복해준다.
+  // 모든 노드를 한번씩 방문하면 종료되므로 N-1 반복문을 사용하면된다.
+  for (let i = 0; i < N - 1; i++) {
+    // 거리가 가장 짧고 방문하지 않는 노드를 찾는다.
+    const curNode = getSmallestNode(distance, visited);
+    // 해당 노드를 방문처리한다.
+    visited[curNode] = true;
+    let adjArr = graph[curNode];
+
+    // 인접 노드들의 거리를 초기화해준다.
+    for (let j = 0; j < adjArr.length; j++) {
+      const [adj, time] = adjArr[j];
+
+      // 현재 노드 까지의 거리 + 다음 노드로 가는 거리
+      const cost = distance[curNode] + time;
+
+      // 다음 노드의 거리가 cost보다 작으면 갱신해준다.
+      if (cost < distance[adj]) {
+        distance[adj] = cost;
+      }
+    }
+  }
+
+  for (let i = 0; i < distance.length; i++) {
+    const element = distance[i];
+    if (element <= K) answer++;
   }
 
   return answer;
