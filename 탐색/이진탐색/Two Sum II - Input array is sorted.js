@@ -22,4 +22,23 @@ var twoSum = function (numbers, target) {
     }
   }
 };
+
+var twoSum = function (numbers, target) {
+  let start = 0;
+  let end = numbers.length - 1;
+
+  while (start < end) {
+    let startElement = numbers[start];
+    let endElement = numbers[end];
+
+    if (startElement + endElement < target) {
+      start++;
+    } else if (startElement + endElement > target) {
+      end--;
+    } else {
+      return [start + 1, end + 1];
+    }
+  }
+};
+
 console.log(twoSum([1, 2, 3, 4, 4, 9, 56, 90], 8));
